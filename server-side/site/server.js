@@ -38,17 +38,16 @@ app.post('/api/design/survey',
 		markdown: req.body.markdown
 	}
 	},
-		     (error,response,body) => {
-		if(error){
-			console.error(error);
-			return;
-		}
-		console.log("ResponseBodyMicroService::"+body.preview);
-		console.log("Response::"+res.json());
-			ansText = body.preview;
-			res.status(200).send( {preview: ansText} );
-			res.end();
-			return;
+		(error,response,body) => {
+			if(error){
+				console.error(error);
+				return;
+			}
+			console.log("ResponseBodyMicroService::"+body.preview);
+			//console.log("Response::"+res.json());
+				ansText = body.preview;
+				res.status(200).send( {preview: ansText} );
+				res.end();
 	});
 	
 		
